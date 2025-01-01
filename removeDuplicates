@@ -1,0 +1,38 @@
+#this code is for remove Duplicates from unsorted Array
+#include<bits/stdc++.h>
+using namespace std;
+class removeDuplicate {
+
+  public:
+   int removeDuplicates(vector<int> &arr, int n) {
+	// Write your code here.
+	if(n==0)
+	return 0;
+	sort(arr.begin(),arr.end());
+	int i=0; 
+	for(int j=1; j<n; j++){
+		if(arr[i]!=arr[j]){
+			i++;
+			arr[i]=arr[j];
+		}
+	}
+	return i+1;
+}
+
+
+
+};
+
+int main() {
+
+  
+  vector< int>arr{1,1,2,2,3,3};
+  int n=arr.size();
+  removeDuplicate d1;
+  int a=d1.removeDuplicates(arr, n);
+  for(int i=0; i<a; i++){
+      cout<<arr[i]<<" ";
+  }
+
+  return 0;
+}
